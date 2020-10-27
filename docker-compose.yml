@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  db:
+    build:
+      context: ./db
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
