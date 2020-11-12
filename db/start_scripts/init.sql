@@ -1,10 +1,10 @@
 CREATE TABLE AppStore (
 	IdApp INT GENERATED ALWAYS AS IDENTITY,
 	name_app VARCHAR(50) NOT NULL,
-	ranking INT,
+	ranking real,
 	date_update TIMESTAMP,
 	description_app VARCHAR(5000),
-	times_used INT,
+	times_used INT DEFAULT 0,
 	PRIMARY KEY(IdApp)
 );
 
@@ -21,7 +21,7 @@ CREATE TABLE DataShelf (
 
 CREATE TABLE Rating (
 	IdRating INT GENERATED ALWAYS AS IDENTITY,
-	value integer NOT NULL,
+	value real NOT NULL,
 	comm VARCHAR(5000),
 	date_update TIMESTAMP,
 	user_id INT,
@@ -43,4 +43,11 @@ CREATE TABLE Cockpit (
 	cluster_allocation VARCHAR(50),
 	IdApp INT REFERENCES AppStore,
 	PRIMARY KEY(IdTask)
+);
+
+CREATE TABLE Image (
+	IdImage INT GENERATED ALWAYS AS IDENTITY,
+	img bytea NOT NULL,
+	IdApp INT REFERENCES AppStore,
+	PRIMARY KEY(IdImage)
 );
