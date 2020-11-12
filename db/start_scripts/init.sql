@@ -4,6 +4,7 @@ CREATE TABLE AppStore (
 	ranking INT,
 	date_update TIMESTAMP,
 	description_app VARCHAR(5000),
+	times_used INT,
 	PRIMARY KEY(IdApp)
 );
 
@@ -18,6 +19,8 @@ CREATE TABLE Rating (
 	IdRating INT GENERATED ALWAYS AS IDENTITY,
 	value integer NOT NULL,
 	comm VARCHAR(5000),
+	date_update TIMESTAMP,
+	user_id INT,
 	IdApp INT REFERENCES AppStore,
 	PRIMARY KEY(IdRating)
 );
