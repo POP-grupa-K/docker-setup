@@ -11,6 +11,10 @@ CREATE TABLE AppStore (
 CREATE TABLE DataShelf (
 	IdDataShelf INT GENERATED ALWAYS AS IDENTITY,
 	data_set_shelf VARCHAR(5000),
+	name VARCHAR(5000),
+	data_type VARCHAR(500),
+	access_type VARCHAR(500),
+	values INT,
 	IdApp INT REFERENCES AppStore,
 	PRIMARY KEY(IdDataShelf)
 );
