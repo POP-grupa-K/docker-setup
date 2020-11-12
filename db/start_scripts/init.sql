@@ -14,7 +14,7 @@ CREATE TABLE DataShelf (
 	name VARCHAR(5000),
 	data_type VARCHAR(500),
 	access_type VARCHAR(500),
-	values INT,
+	value INT,
 	IdApp INT REFERENCES AppStore,
 	PRIMARY KEY(IdDataShelf)
 );
