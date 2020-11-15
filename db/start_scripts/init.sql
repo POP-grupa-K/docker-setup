@@ -1,19 +1,19 @@
 CREATE TABLE AppStore (
 	IdApp INT GENERATED ALWAYS AS IDENTITY,
-	name_app VARCHAR(50) NOT NULL,
+	name VARCHAR(50) NOT NULL,
 	ranking real,
-	date_update TIMESTAMP,
-	description_app VARCHAR(5000),
-	times_used INT DEFAULT 0,
+	dateUpdate TIMESTAMP,
+	description VARCHAR(5000),
+	timesUsed INT DEFAULT 0,
 	PRIMARY KEY(IdApp)
 );
 
 CREATE TABLE DataShelf (
 	IdDataShelf INT GENERATED ALWAYS AS IDENTITY,
-	data_set_shelf VARCHAR(5000),
+	dataSetShelf VARCHAR(5000),
 	name VARCHAR(5000),
-	data_type VARCHAR(500),
-	access_type VARCHAR(500),
+	dataType VARCHAR(500),
+	accessType VARCHAR(500),
 	value INT,
 	IdApp INT REFERENCES AppStore,
 	PRIMARY KEY(IdDataShelf)
@@ -23,24 +23,24 @@ CREATE TABLE Rating (
 	IdRating INT GENERATED ALWAYS AS IDENTITY,
 	value real NOT NULL,
 	comm VARCHAR(5000),
-	date_update TIMESTAMP,
-	user_id INT,
+	dateUpdate TIMESTAMP,
+	IdUser INT,
 	IdApp INT REFERENCES AppStore,
 	PRIMARY KEY(IdRating)
 );
 
 CREATE TABLE Cockpit (
 	IdTask INT GENERATED ALWAYS AS IDENTITY,
-	name_task VARCHAR(50),
+	name VARCHAR(50),
 	version INT,
-	date_start TIMESTAMP,
-	date_end TIMESTAMP,
-	consumed_credits VARCHAR(50),
-	reserved_credits VARCHAR(50),
+	dateStart TIMESTAMP,
+	dateEnd TIMESTAMP,
+	consumedCredits VARCHAR(50),
+	reservedCredits VARCHAR(50),
 	status VARCHAR(50),
 	priority INT,
 	private VARCHAR(50),
-	cluster_allocation VARCHAR(50),
+	clusterAllocation VARCHAR(50),
 	IdApp INT REFERENCES AppStore,
 	PRIMARY KEY(IdTask)
 );
