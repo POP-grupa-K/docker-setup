@@ -47,6 +47,7 @@ CREATE TABLE Cockpit (
 
 CREATE TABLE Image (
 	IdImage INT GENERATED ALWAYS AS IDENTITY,
+	filename VARCHAR(50),
 	img bytea NOT NULL,
 	IdApp INT REFERENCES AppStore,
 	PRIMARY KEY(IdImage)
