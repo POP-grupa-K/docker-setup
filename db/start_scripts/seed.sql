@@ -25,3 +25,10 @@ INSERT INTO Cockpit (name, version, dateStart, dateEnd, consumedCredits, reserve
 VALUES ('Task nr 2', 2, '2020-11-12', '2020-11-13', '90', '30', 'done', 2, 'private', 'cluster yes', 2);
 INSERT INTO Cockpit (name, version, dateStart, dateEnd, consumedCredits, reservedCredits, status, priority, private, clusterAllocation, IdApp)
 VALUES ('Task nr 3', 3, '2020-11-12', '2020-11-13', '30', '20', 'done', 4, 'private', 'cluster yes', 3);
+
+INSERT INTO Image (filename, img, IdApp) 
+VALUES ('img1.jpg', bytea('/images/img1.jpg'), 1);
+INSERT INTO Image (filename, img, IdApp) 
+VALUES ('img2.jpg', bytea('/images/img2.jpg'), 2);
+INSERT INTO Image (filename, img, IdApp) 
+VALUES ('img3.jpg', bytea('/images/img3.jpg'), 3);
