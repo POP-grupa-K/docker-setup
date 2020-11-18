@@ -1,9 +1,9 @@
 INSERT INTO AppStore (name, ranking, dateUpdate, description, timesUsed)
-VALUES ('Kalkulator', 1, '2020-10-10', 'Kalkulator jak to kalkulator', 69);
+VALUES ('Kalkulator', 5, '2020-10-10', 'Kalkulator jak to kalkulator', 69);
 INSERT INTO AppStore (name, ranking, dateUpdate, description, timesUsed)
-VALUES ('Aplikacja do rozpoznawania gestów', 2, '2020-11-11', 'Aplikacja rozpoznaje gesty na obrazie/filmie', 440);
+VALUES ('Aplikacja do rozpoznawania gestów', 4, '2020-11-11', 'Aplikacja rozpoznaje gesty na obrazie/filmie', 440);
 INSERT INTO AppStore (name, ranking, dateUpdate, description, timesUsed)
-VALUES ('Aplikacja do prognozowania kursów walut', 3, '2020-11-13', 'Aplikacja prognozuje kursy walut takich jak dolar czy euro', 1000);
+VALUES ('Aplikacja do prognozowania kursów walut', 1, '2020-11-13', 'Aplikacja prognozuje kursy walut takich jak dolar czy euro', 1000);
 
 INSERT INTO DataShelf (dataSetShelf, name, dataType, accessType, value, IdApp)
 VALUES ('data self shelf 1', 'Data Shelf nr 1', 'int', 'full access', 5, 1);
