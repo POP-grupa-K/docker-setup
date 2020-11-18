@@ -15,7 +15,7 @@ CREATE TABLE DataShelf (
 	dataType VARCHAR(500),
 	accessType VARCHAR(500),
 	value INT,
-	IdApp INT REFERENCES AppStore,
+	IdApp INT,
 	PRIMARY KEY(IdDataShelf)
 );
 
@@ -41,7 +41,7 @@ CREATE TABLE Cockpit (
 	priority INT,
 	private VARCHAR(50),
 	clusterAllocation VARCHAR(50),
-	IdApp INT REFERENCES AppStore,
+	IdApp INT,
 	PRIMARY KEY(IdTask)
 );
 
