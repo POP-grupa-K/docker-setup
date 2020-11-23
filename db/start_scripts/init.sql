@@ -52,3 +52,12 @@ CREATE TABLE Image (
 	IdApp INT REFERENCES AppStore,
 	PRIMARY KEY(IdImage)
 );
+
+CREATE TABLE Users (
+	IdUser INT GENERATED ALWAYS AS IDENTITY,
+	login VARCHAR(50),
+	password VARCHAR(32),
+	status VARCHAR(50),
+	PRIMARY KEY(IdUser)
+);
+	
