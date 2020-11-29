@@ -5,6 +5,8 @@ CREATE TABLE AppStore (
 	dateUpdate TIMESTAMP,
 	description VARCHAR(5000),
 	timesUsed INT DEFAULT 0,
+	statusApp VARCHAR(500),
+	IdUser INT,
 	PRIMARY KEY(IdApp)
 );
 
@@ -42,6 +44,7 @@ CREATE TABLE Cockpit (
 	private VARCHAR(50),
 	clusterAllocation VARCHAR(50),
 	IdApp INT,
+	IdUser INT,
 	PRIMARY KEY(IdTask)
 );
 
