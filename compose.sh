@@ -58,7 +58,7 @@ if [[ $dev == 'true' ]]; then
   compose="$compose -f docker-compose.override.yml"
 fi
 
-compose="$compose up -d"
+compose="$compose up -d --build"
 
 if [[ $build_front == 'true' ]]; then
   compose="$compose --build front"
