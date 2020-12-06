@@ -22,6 +22,9 @@ pull_repos
 
 while [ $# -gt 0 ]; do
   case "$1" in
+	-f|--front)
+	    front='true'
+	;;
         -d|--development)
             dev='true'
         ;;
@@ -58,9 +61,11 @@ if [[ $dev == 'true' ]]; then
   compose="$compose -f docker-compose.override.yml"
 fi
 
+
+if [[ $front == 'true' ]]; then
+  compose="$compose -f front.yml"
+fi
+
 compose="$compose up -d --build"
 
-if [[ $build_front == 'true' ]]; then
-  compose="$compose --build front"
-fi
 exec $compose

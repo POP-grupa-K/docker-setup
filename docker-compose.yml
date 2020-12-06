@@ -25,15 +25,6 @@ services:
     links:
       - "db:pgsql-server"
 
-  front:
-    build:
-      context: ./front
-      dockerfile: Dockerfile.prod
-    ports:
-      - 80:80
-    environment:
-      - APPSTORE_URL=appstore:8005
-
   appstore:
     build:
       context: ./appstore-service
@@ -41,6 +32,19 @@ services:
       - 8005:8005
     environment:
       - SQLALCHEMY_DATABASE_URL=postgres://pop:password1@db/pop
+
+  calculation-cockpit:
+    build:
+      context: ./calculation-cockpit-service
+    ports:
+      - 8006:8005
+
+  datashelf:
+    build:
+      context: ./datashelf-service
+    ports:
+      - 8007:8005
+
 
 volumes:
   postgres_data:
