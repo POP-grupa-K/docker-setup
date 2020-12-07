@@ -37,13 +37,17 @@ services:
     build:
       context: ./calculation-cockpit-service
     ports:
-      - 8006:8005
+      - 8006:8006
+    environment:
+      - SQLALCHEMY_DATABASE_URL=postgres://pop:password1@db/pop
 
   datashelf:
     build:
       context: ./datashelf-service
     ports:
-      - 8007:8005
+      - 8007:8007
+    environment:
+      - SQLALCHEMY_DATABASE_URL=postgres://pop:password1@db/pop
 
 
 volumes:
