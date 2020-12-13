@@ -1,0 +1,54 @@
+version: '3.7'
+services:
+  db:
+    build:
+      context: ./db
+    ports:
+      - "54320:5432"
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:4.18
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - "28080:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    links:
+      - "db:pgsql-server"
+
+  appstore:
+    image: popbalticlsc/appstore:latest
+    ports:
+      - 8005:8005
+    environment:
+      - SQLALCHEMY_DATABASE_URL=postgres://pop:password1@db/pop
+
+  calculation-cockpit:
+    image: popbalticlsc/cockpit:latest
+    ports:
+      - 8006:8006
+    environment:
+      - SQLALCHEMY_DATABASE_URL=postgres://pop:password1@db/pop
+
+  front:
+    image: popbalticlsc/front:latest
+    ports:
+      - 3000:80
+    environment:
+      - APPSTORE_URL=appstore:8005
+      - CALCULATION_COCKPIT_URL=calculation-cockpit:8006
+
+volumes:
+  postgres_data:
+    name: postgres_data
+  pgadmin-data:
+    name: pgadmin-data
