@@ -39,3 +39,10 @@ INSERT INTO Users (login, password, status)
 VALUES ('Antoni2', '1teast!.12', 'OK');
 INSERT INTO Users (login, password, status) 
 VALUES ('Artur3', 'test!.12', 'OK');
+
+INSERT INTO User_App (IdApp, IdUser)
+VALUES (1, 1);
+INSERT INTO User_App (IdApp, IdUser)
+VALUES (2, 1);
+INSERT INTO User_App (IdApp, IdUser)
+VALUES (3, 1);

@@ -63,4 +63,11 @@ CREATE TABLE Users (
 	status VARCHAR(50),
 	PRIMARY KEY(IdUser)
 );
+
+CREATE TABLE User_App (
+	IdUserApp INT GENERATED ALWAYS AS IDENTITY,
+	IdApp INT,
+	IdUser INT,
+	PRIMARY KEY(IdUserApp)
+);
 	
