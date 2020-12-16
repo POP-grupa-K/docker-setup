@@ -47,7 +47,7 @@ done
 echo $down
 if [[ $down == "true" ]]; then
   echo asd
-  compose="docker-compose -f docker-compose.yml -f docker-compose.override.yml down"
+  compose="docker-compose -f docker-compose.yml -f front.yml down"
   if [[ $volumes == 'true' ]]; then
     compose="$compose -v"
   fi
@@ -57,9 +57,6 @@ if [[ $down == "true" ]]; then
 fi
 
 compose="docker-compose -f docker-compose.yml"
-if [[ $dev == 'true' ]]; then
-  compose="$compose -f docker-compose.override.yml"
-fi
 
 
 if [[ $front == 'true' ]]; then
