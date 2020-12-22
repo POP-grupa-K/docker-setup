@@ -73,7 +73,7 @@ CREATE TABLE User_App (
 	
 CREATE TABLE Schema (
 	IdSchema INT GENERATED ALWAYS AS IDENTITY,
-	IdBigApp INT REFERENCES AppStore,
-	IdSmallApp INT REFERENCES AppStore,
+	IdNextApp INT REFERENCES AppStore,
+	IdPreviousApp INT REFERENCES AppStore,
 	PRIMARY KEY(IdSchema)
 );
