@@ -46,3 +46,15 @@ INSERT INTO User_App (IdApp, IdUser)
 VALUES (2, 1);
 INSERT INTO User_App (IdApp, IdUser)
 VALUES (3, 1);
+
+INSERT INTO AppStore (name, ranking, dateUpdate, description, timesUsed)
+VALUES ('Google Maps World', 4, '2020-12-10', 'Aplikacja do map na całym świecie', 29);
+INSERT INTO AppStore (name, ranking, dateUpdate, description, timesUsed)
+VALUES ('Google Maps Europe', 5, '2020-12-15', 'Aplikacja do map na terenie Europy', 15);
+INSERT INTO AppStore (name, ranking, dateUpdate, description, timesUsed)
+VALUES ('Google Maps America', 6, '2020-12-16', 'Aplikacja do map na terenie Ameryki', 11);
+
+INSERT INTO Schema (IdBigApp, IdSmallApp)
+VALUES (4, 5);
+INSERT INTO Schema (IdBigApp, IdSmallApp)
+VALUES (4, 6);
